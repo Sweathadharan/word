@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+        body{
+            margin:0;
+            padding:0;
+            background-image: url(bg.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: "Irish Grover", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .logo{
+            position: relative;
+            top:50px;
+            text-align: center;
+        }
+        .logo span{
+            
+            font-size: 40px;
+            margin:8px;
+            display: inline-block;
+            opacity: 0;
+            animation: textFall 1.5s ease forwards;
+        }
+
+        .logo span:nth-child(1) { animation-delay: 0.1s; }
+        .logo span:nth-child(2) { animation-delay: 0.2s; }
+        .logo span:nth-child(3) { animation-delay: 0.3s; } 
+        .logo span:nth-child(4) { animation-delay: 0.4s; } 
+        .logo span:nth-child(5) { animation-delay: 0.5s; } 
+        .logo span:nth-child(6) { animation-delay: 0.6s; } 
+        .logo span:nth-child(7) { animation-delay: 0.7s; } 
+        .logo span:nth-child(8) { animation-delay: 0.8s; } 
+        .logo span:nth-child(9) { animation-delay: 0.9s; } 
+        
+        @keyframes textFall {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .logo img{
+
+            width:80px;
+            display: block;
+            margin: 0 auto;
+
+        }
+        .logo {
+            position: relative;
+            top: 50px;
+            text-align: center;
+            opacity: 0;
+            animation: logoFall 1.5s ease forwards;
+        }
+
+        @keyframes logoFall {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container{ 
+        position: relative;  
+        bottom:-100px;   
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border:2px solid black;
+        width:30%;
+        height:350px;
+        border-radius: 15px 15px 15px 15px;
+        background-color:#0adccf;
+        margin:20px auto;
+        box-shadow: 5px 5px 5px 5px rgba(20, 1, 18, 0.651);  
+    }
+    .container:hover {
+    transform: scale(1.05); 
+    }
+    .play-game img{
+        position: relative;
+        top:5px;
+        width:25px;
+        
+    }
+     span{
+        
+        font-size: 20px;
+        font-family: "Irish Grover", system-ui;
+        text-decoration: none;
+        color:black;
+    }
+
+    input{
+    padding:8px;
+    background-color: #ecec47;
+    border-radius: 20px 20px 20px 20px;
+    margin:5px;
+    font-family: "Irish Grover", system-ui;
+    text-align: center;
+    width:200px;
+    }
+    p{
+        font-size: 10px;
+    }  
+    label{
+        font-size: 20px;
+        letter-spacing: 15px;
+    } 
+    button{
+        padding: 5px;
+        width:200px;
+        background-color: #ecec47;
+        font-family: "Irish Grover", system-ui;
+        border-radius: 20px 5px 20px 5px;
+
+    } 
+    
+    #aud {
+  display: none;
+}
+    
+    @media screen and (max-width:480px)
+    {
+        body{
+        background-position:  top ;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        height: 100vh; 
+    }
+    .container{
+    margin:50px;
+    height:500px;
+    width:80%;             
+    }
+    input{
+    padding:15px;
+    background-color: #ecec47;
+    border-radius: 20px 20px 20px 20px;
+    margin:5px;
+    font-family: "Irish Grover", system-ui;
+    text-align: center;
+    width:200px;
+    }
+    p{
+        font-size: 15px;
+    }  
+    label{
+        font-size: 20px;
+        letter-spacing: 15px;
+    }
+    }  
+ </style>
+</head>
+<body>
+    <audio id="bgMusic" src="bgmusic.mp3" autoplay loop></audio>
+    <button id="playAudio" style="display: none;">Play Audio</button>
+
+    <div class="logo">
+        <img src="logo-3.png" alt="">
+        <span>WORD WHIRL</span>
+    </div>
+    <div class="container">
+        <label>ENAM</label>
+        <p>HAHAHA!!! NAME</p>
+        <input type="text" id="name" placeholder="Name"><br>
+        <label>NICK NAME</label>
+        <p>YOUR lOVELY NAME</p>
+        <input type="text" id="nick_name" placeholder="Nick name">
+        <br>
+        <div class="play-game">
+            <button type="button" onclick="getDetails()">
+                <img src="play.png" alt="">
+                <span>GET SET GO!</span>
+            </button>
+           
+        </div>
+    </div>
+    <script>
+        function redirectToHTML() {
+            window.location.href = 'instructions.html';
+        }
+
+        function getDetails() {
+            let name = document.getElementById('name');
+            let nickName = document.getElementById('nick_name');
+            console.log(name.value, nickName.value)
+            let detailObject = {}
+            detailObject['name'] = name.value;
+            detailObject['nickName'] = nickName.value;
+            console.log(detailObject);
+            setTimeout(redirectToHTML, 2000)
+        }
+        
+const bgMusic = document.getElementById('bgMusic');
+    const playButton = document.getElementById('playAudio');
+
+    
+    if (!bgMusic.autoplay) {
+      playButton.style.display = 'block'; 
+      playButton.addEventListener('click', () => bgMusic.play());
+    }
+
+    </script>
+</body>
+</html>

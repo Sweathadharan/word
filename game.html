@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word whirl</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bgMusic" src="bgmusic.mp3" loop></audio>
+    <div class="container">
+        <h1>
+            <span>W</span>
+            <span>o</span>
+            <span>r</span>
+            <span>d</span>
+            <span> </span>
+            <span>W</span>
+            <span>h</span>
+            <span>i</span>
+            <span>r</span>
+            <span>l</span>
+        </h1>
+        <hr>
+        
+        
+        <!-- card starts here -->
+        <div class="card">
+            <!-- For displaying word -->
+            <p class="letters"></p>
+            <!-- for showing hint -->
+            <div class="info">
+                <p class="hint"> Hint:  <span></span> </p>
+                <p class="time">Time : <span><b></b>s</span></p>
+            </div>
+        <!-- For entering guessed word -->
+        <input type="text" placeholder="Enter the guessed word" id="word">
+        <div class="buttons">
+            <button class="refresh" id="ref" onclick="audio.play()">Refresh</button>
+            <button class="check" id="check" onclick="audio.play()">Check</button>
+        </div>
+     </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

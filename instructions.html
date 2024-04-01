@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+        body{
+            margin:0;
+            padding:0;
+            background-image: url(bg.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: "Irish Grover", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .container{
+        position: relative;  
+        bottom:-10px;   
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border:2px solid black;
+        width:40%;
+        height:550px;
+        border-radius: 15px 15px 15px 15px;
+        background-color:#0adccf;
+        margin:20px auto;
+        box-shadow: 5px 5px 5px 5px rgba(20, 1, 18, 0.651);
+        }
+        .container:hover {
+        transform: scale(1.05); 
+    }
+    hr{
+    height: 2px; 
+    background-color: black; 
+    width: 100%; 
+}
+    .container {
+
+    transition: transform 0.5s ease;
+    }
+        ol li{
+            line-break: 2px;
+            font-size: 20px;
+        }
+        .play-game img{
+        position: relative;
+        top:8px;
+        width:30px;
+        
+    }
+     a{
+        
+        font-size: 20px;
+        font-family: "Irish Grover", system-ui;
+        text-decoration: none;
+        color:black;
+    }
+    button{
+        padding: 5px;
+        width:150px;
+        background-color: #ecec47;
+    } 
+        @media screen and (max-width:480px)
+    {
+        body{
+        background-position:  top ;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        height: 100vh; 
+    }
+    .container{
+    margin:50px;
+    height:600px;
+    width:80%;             
+    }
+    li{
+        font-size: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Instructions</h2>
+        <hr>
+        <ol>
+            <li>A word would be jumbed and you will have to identify the correct word.</li><br>
+            <li>Hint for the word will be provided.</li><br>
+            <li>If you are not aware of the word you can click on refresh button to change next word</li><br>
+            <li>After typing the word you can check if the word is correct by clicking check button.</li><br>
+            <li>If the word is incorrect you will automatically redirected to gameover page. </li><br>
+            <li>And the scores will be displayed.</li>
+        </ol>
+        <div class="play-game">
+            <button type="button" onclick="getDetails()">
+                <img src="play.png" alt="">
+                 <a href="game.html">Let's play</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
